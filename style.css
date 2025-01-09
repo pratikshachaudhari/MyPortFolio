@@ -1,4 +1,3 @@
-
 /* Reset */
 * {
     margin: 0;
@@ -7,8 +6,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #eceae7, #f5f5f5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #eceae7;
     color: #333;
     line-height: 1.6;
 }
@@ -19,7 +18,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    background: #3aa491;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -32,28 +31,21 @@ header nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s;
 }
 
 header nav a:hover {
-    color: #ffdd00;
     text-decoration: underline;
 }
 
 /* Containers */
 .container {
     padding: 80px 40px;
+    height: auto;
     max-width: 1100px;
     margin: 70px auto;
-    background: rgba(255, 255, 255, 0.9);
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.container:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Intro Section */
@@ -69,23 +61,16 @@ header nav a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #555;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 .intro a {
-    color: #00b4d8;
+    color: #3aa491;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #00b4d8;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
 }
 
 .intro a:hover {
-    background: #00b4d8;
-    color: white;
     text-decoration: underline;
+    color: #236357;
 }
 
 /* Skills Section */
@@ -98,8 +83,9 @@ header nav a:hover {
 
 /* Grid of Skill Icons */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
+    display: -moz-grid-group;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -107,12 +93,28 @@ header nav a:hover {
 
 .skill-icon {
     font-size: 2.5em;
-    transition: transform 0.3s ease;
 }
 
-.skill-icon:hover {
-    transform: scale(1.1);
+/*Skills List */
+.skills-list {
+    width: 150%;
+    padding-left: 20px;
 }
+
+.skills-list h3 {
+    margin-bottom: 10px;
+}
+
+.skills-list ul {
+    list-style-type: none;
+    padding: 0px;
+    line-height: 1.5;
+}
+
+.skills-list ul li {
+    margin-bottom: 5px;
+}
+
 
 /* Projects Section */
 .slideshow-container {
@@ -121,14 +123,12 @@ header nav a:hover {
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-slide {
     display: none;
     transition: opacity 0.5s ease-in-out;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
 }
 
 .project-slide.active {
@@ -143,6 +143,11 @@ header nav a:hover {
     gap: 20px;
 }
 
+.project-info {
+    width: 50%;
+    padding: 10px;
+}
+
 .project-info h3 {
     margin-bottom: 10px;
 }
@@ -152,32 +157,37 @@ header nav a:hover {
     max-width: 300px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Slideshow Controls */
+.slideshow-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
 .slideshow-controls button {
     padding: 10px 20px;
     border: none;
-    background-color: #00b4d8;
+    background-color: #3aa491;
     color: white;
     font-size: 16px;
     cursor: pointer;
     margin: 0 5px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 .slideshow-controls button:hover {
     background-color: #236357;
 }
 
+
+
+
 /* Timeline Container */
 .timeline {
     position: relative;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 3px solid #00b4d8;
+    border-left: 3px solid #3aa491;
 }
 
 /* Timeline Item */
@@ -194,7 +204,7 @@ header nav a:hover {
     left: -8px;
     width: 15px;
     height: 15px;
-    background-color: #00b4d8;
+    background-color: #3aa491;
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -214,15 +224,80 @@ header nav a:hover {
     line-height: 1.5;
 }
 
-/* Contact Section */
+/* Contact Form */
+.contact-info {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
 .contact-info a {
-    color: #00b4d8;
+    color: #3aa491;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s ease;
 }
 
 .contact-info a:hover {
-    transform: scale(1.1);
+    text-decoration: underline;
     color: #236357;
+}
+
+/* Enhanced Styles */
+body {
+    background: linear-gradient(135deg, #eceff1, #cfd8dc);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: rgba(58, 164, 145, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.contact-btn, .slideshow-controls button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover, .slideshow-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(58, 164, 145, 0.3);
+}
+
+/* Adding card effect to projects */
+.project-slide {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: #3aa491;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background: #236357;
 }
