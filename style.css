@@ -1,3 +1,4 @@
+
 /* Reset */
 * {
     margin: 0;
@@ -6,8 +7,8 @@
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #eceae7;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #eceae7, #f5f5f5);
     color: #333;
     line-height: 1.6;
 }
@@ -18,7 +19,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #3aa491;
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -31,21 +32,28 @@ header nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 header nav a:hover {
+    color: #ffdd00;
     text-decoration: underline;
 }
 
 /* Containers */
 .container {
     padding: 80px 40px;
-    height: auto;
     max-width: 1100px;
     margin: 70px auto;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 /* Intro Section */
@@ -61,16 +69,23 @@ header nav a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #555;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .intro a {
-    color: #3aa491;
+    color: #00b4d8;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #00b4d8;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .intro a:hover {
+    background: #00b4d8;
+    color: white;
     text-decoration: underline;
-    color: #236357;
 }
 
 /* Skills Section */
@@ -83,9 +98,8 @@ header nav a:hover {
 
 /* Grid of Skill Icons */
 .skills-grid {
-    width: 50%;
-    display: -moz-grid-group;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -93,28 +107,12 @@ header nav a:hover {
 
 .skill-icon {
     font-size: 2.5em;
+    transition: transform 0.3s ease;
 }
 
-/*Skills List */
-.skills-list {
-    width: 150%;
-    padding-left: 20px;
+.skill-icon:hover {
+    transform: scale(1.1);
 }
-
-.skills-list h3 {
-    margin-bottom: 10px;
-}
-
-.skills-list ul {
-    list-style-type: none;
-    padding: 0px;
-    line-height: 1.5;
-}
-
-.skills-list ul li {
-    margin-bottom: 5px;
-}
-
 
 /* Projects Section */
 .slideshow-container {
@@ -123,12 +121,14 @@ header nav a:hover {
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-slide {
     display: none;
     transition: opacity 0.5s ease-in-out;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .project-slide.active {
@@ -143,11 +143,6 @@ header nav a:hover {
     gap: 20px;
 }
 
-.project-info {
-    width: 50%;
-    padding: 10px;
-}
-
 .project-info h3 {
     margin-bottom: 10px;
 }
@@ -157,37 +152,32 @@ header nav a:hover {
     max-width: 300px;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.slideshow-controls {
-    text-align: center;
-    margin-top: 10px;
-}
-
+/* Slideshow Controls */
 .slideshow-controls button {
     padding: 10px 20px;
     border: none;
-    background-color: #3aa491;
+    background-color: #00b4d8;
     color: white;
     font-size: 16px;
     cursor: pointer;
     margin: 0 5px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .slideshow-controls button:hover {
     background-color: #236357;
 }
 
-
-
-
 /* Timeline Container */
 .timeline {
     position: relative;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 3px solid #3aa491;
+    border-left: 3px solid #00b4d8;
 }
 
 /* Timeline Item */
@@ -204,7 +194,7 @@ header nav a:hover {
     left: -8px;
     width: 15px;
     height: 15px;
-    background-color: #3aa491;
+    background-color: #00b4d8;
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -224,20 +214,15 @@ header nav a:hover {
     line-height: 1.5;
 }
 
-/* Contact Form */
-.contact-info {
-    font-size: 1.2em;
-    line-height: 1.8;
-    margin-top: 20px;
-}
-
+/* Contact Section */
 .contact-info a {
-    color: #3aa491;
+    color: #00b4d8;
     text-decoration: none;
     font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
+    transform: scale(1.1);
     color: #236357;
 }
