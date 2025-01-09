@@ -37,21 +37,3 @@ document.getElementById('next-btn').addEventListener('click', () => {
 
 // Initialize first slide
 showSlide(currentIndex);
-
-// Back-to-top button functionality
-const backToTopButton = document.createElement('div');
-backToTopButton.id = 'back-to-top';
-backToTopButton.innerHTML = '↑';
-document.body.appendChild(backToTopButton);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
