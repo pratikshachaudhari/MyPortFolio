@@ -244,7 +244,7 @@ header nav a:hover {
     position: relative;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 3px solid #454564;
+    /* Removed the border-left to eliminate the timeline line */
 }
 
 /* Timeline Item */
@@ -253,7 +253,7 @@ header nav a:hover {
     margin-bottom: 30px;
     padding-left: 20px;
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(20px); /* Initially shifted to the right */
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -268,26 +268,14 @@ header nav a:hover {
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-/* Timeline Content */
-.timeline-content {
-    transition: transform 0.3s ease;
-    transform: scaleY(1); /* Reset any flipping */
-}
-
-/* Hover Effect: Scale content and dot together */
-.timeline-item:hover .timeline-content,
-.timeline-item:hover .timeline-dot {
-    transform: scale(1.1); /* Smooth enlargement without flipping */
 }
 
 /* When timeline item becomes visible */
 .timeline-item.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); /* Moves to original position */
 }
+
 /* Contact Form */
 .contact-info {
     font-size: 1.2em;

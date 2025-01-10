@@ -48,6 +48,8 @@ const observer3 = new IntersectionObserver((entries, observer3) => {
 
 // Observe each timeline item
 timelineItems.forEach(item => observer3.observe(item));
+
+
 // Slideshow functionality
 const slides = document.querySelectorAll('.project-slide');
 let currentIndex = 0;
