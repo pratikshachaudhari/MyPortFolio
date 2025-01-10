@@ -239,8 +239,8 @@ header nav a:hover {
 
 
 
- /* Timeline Container */
- .timeline {
+/* Timeline Container */
+.timeline {
     position: relative;
     margin: 40px 0;
     padding-left: 30px;
@@ -274,12 +274,13 @@ header nav a:hover {
 /* Timeline Content */
 .timeline-content {
     transition: transform 0.3s ease;
+    transform: scaleY(1); /* Reset any flipping */
 }
 
 /* Hover Effect: Scale content and dot together */
 .timeline-item:hover .timeline-content,
 .timeline-item:hover .timeline-dot {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Smooth enlargement without flipping */
 }
 
 /* When timeline item becomes visible */
@@ -287,7 +288,6 @@ header nav a:hover {
     opacity: 1;
     transform: translateX(0);
 }
-
 /* Contact Form */
 .contact-info {
     font-size: 1.2em;
