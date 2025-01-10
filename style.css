@@ -279,7 +279,7 @@ header nav a:hover {
 /* Hover Effect: Scale content and dot together */
 .timeline-item:hover .timeline-content,
 .timeline-item:hover .timeline-dot {
-    transform: scale(-1.1);
+    transform: scale(1.1);
 }
 
 /* When timeline item becomes visible */
