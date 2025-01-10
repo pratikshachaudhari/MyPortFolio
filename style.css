@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #eceae7;
+    font-family:'Time Roman', sans-serif;
+    background: linear-gradient(0deg, #19191a, #656581);
     color: #333;
     line-height: 1.6;
 }
@@ -18,7 +18,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #3aa491;
+    background: #454564;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -43,16 +43,46 @@ header nav a:hover {
     height: auto;
     max-width: 1100px;
     margin: 70px auto;
-    background: #fff;
+    background: #e7e1e1;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(8, 6, 6, 0.5);
+    opacity: 0;             /* Initially hidden */
+    transform: translateY(50px); /* Start position (below original) */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth animation */
+}
+
+/* When container becomes visible */
+.container.visible {
+    opacity: 1;             /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 /* Intro Section */
+.wave {
+    display: inline-block;
+    animation: wave-animation 2s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+}
+#changingText {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
 .intro {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .intro-img {
@@ -63,7 +93,7 @@ header nav a:hover {
     border: 5px solid #555;
 }
 .intro a {
-    color: #3aa491;
+    color: #5f5f81;
     text-decoration: none;
     font-weight: bold;
 }
@@ -84,7 +114,7 @@ header nav a:hover {
 /* Grid of Skill Icons */
 .skills-grid {
     width: 50%;
-    display: -moz-grid-group;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
@@ -92,7 +122,34 @@ header nav a:hover {
 }
 
 .skill-icon {
-    font-size: 2.5em;
+    font-size: 5em;
+    color: #3aa491; /* Icon color */
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Glow effect on hover */
+.skill-icon:hover {
+    text-shadow: 0 0 10px rgba(39, 221, 188, 0.8), 
+                 0 0 20px rgba(14, 238, 197, 0.6), 
+                 0 0 30px rgba(8, 236, 194, 0.4);
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Optional continuous glowing animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(39, 221, 188, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(14, 238, 197, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(8, 236, 194, 0.4);
+    }
+}
+
+.skill-icon.glowing {
+    animation: glow 2s infinite alternate;
 }
 
 /*Skills List */
@@ -167,7 +224,7 @@ header nav a:hover {
 .slideshow-controls button {
     padding: 10px 20px;
     border: none;
-    background-color: #3aa491;
+    background-color: #454564;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -182,12 +239,12 @@ header nav a:hover {
 
 
 
-/* Timeline Container */
-.timeline {
+ /* Timeline Container */
+ .timeline {
     position: relative;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 3px solid #3aa491;
+    border-left: 3px solid #454564;
 }
 
 /* Timeline Item */
@@ -195,6 +252,9 @@ header nav a:hover {
     position: relative;
     margin-bottom: 30px;
     padding-left: 20px;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 /* Timeline Dot */
@@ -204,24 +264,28 @@ header nav a:hover {
     left: -8px;
     width: 15px;
     height: 15px;
-    background-color: #3aa491;
+    background-color: #454564;
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 /* Timeline Content */
-.timeline-content h3 {
-    margin-bottom: 5px;
-    font-size: 1.2em;
-    color: #333;
+.timeline-content {
+    transition: transform 0.3s ease;
 }
 
-.timeline-content p {
-    margin: 0;
-    color: #555;
-    font-size: 0.95em;
-    line-height: 1.5;
+/* Hover Effect: Scale content and dot together */
+.timeline-item:hover .timeline-content,
+.timeline-item:hover .timeline-dot {
+    transform: scale(-1.1);
+}
+
+/* When timeline item becomes visible */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Contact Form */
@@ -232,7 +296,7 @@ header nav a:hover {
 }
 
 .contact-info a {
-    color: #3aa491;
+    color: #5f5f81;
     text-decoration: none;
     font-weight: bold;
 }
